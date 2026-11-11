@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Be Vietnam Pro', 'Nunito Sans', system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3, .font-heading {
+    font-family: 'Be Vietnam Pro', 'Nunito Sans', system-ui, sans-serif;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes hop {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px) scale(1.05); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.animate-float {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-hop {
+  animation: hop 0.8s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 1.2s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Custom friendly scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print Certificate Specific Styling */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  /* Hide everything by default */
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* Show only certificate area and its contents */
+  #printable-certificate-area,
+  #printable-certificate-area * {
+    visibility: visible !important;
+  }
+
+  #printable-certificate-area {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 94vw !important;
+    max-width: 270mm !important;
+    height: 90vh !important;
+    max-height: 185mm !important;
+    margin: 0 auto !important;
+    padding: 12mm 16mm !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border: 6px solid #f59e0b !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print,
+  .no-print * {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}

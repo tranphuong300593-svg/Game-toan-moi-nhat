@@ -1,0 +1,44 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default-deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128;
+    }
+
+    function isValidStudent(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.fullName is string && data.fullName.size() > 0 && data.fullName.size() <= 100 &&
+             data.className is string && data.className.size() <= 20 &&
+             data.lastLoginAt is string && data.lastLoginAt.size() <= 50;
+    }
+
+    function isValidActivity(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.studentId is string && data.studentId.size() <= 128 &&
+             data.fullName is string && data.fullName.size() <= 100 &&
+             data.className is string && data.className.size() <= 20 &&
+             data.type is string && data.type.size() <= 50 &&
+             data.targetId is string && data.targetId.size() <= 100 &&
+             data.completedAt is string && data.completedAt.size() <= 50;
+    }
+
+    // Students Collection
+    match /students/{studentId} {
+      allow read: if isValidId(studentId);
+      allow create, update: if isValidId(studentId) && isValidStudent(request.resource.data);
+      allow delete: if false;
+    }
+
+    // Activities Collection (Exams & Learning records)
+    match /activities/{activityId} {
+      allow read: if true;
+      allow create, update: if isValidId(activityId) && isValidActivity(request.resource.data);
+      allow delete: if false;
+    }
+  }
+}

@@ -1,0 +1,857 @@
+# BỘ 32 PROMPT TRÒ CHƠI – VƯƠNG QUỐC TOÁN HỌC
+
+**Web App: VƯƠNG QUỐC TOÁN HỌC – MATH ADVENTURE GRADE 1**
+
+Đối tượng: Học sinh lớp 1 – Trường Tiểu học Trần Đại Nghĩa, phường Hòa Xuân, TP Đà Nẵng.
+
+Bộ trò chơi được xây dựng theo các mạch kiến thức Toán 1 – Kết nối tri thức với cuộc sống, tập 1 và tập 2.
+
+## PHẦN A. YÊU CẦU CHUNG CHO CẢ 32 TRÒ CHƠI
+
+Hãy phát triển 32 trò chơi tương tác trong 8 khu vực của KHO TRÒ CHƠI hiện có.
+
+**Nguyên tắc bắt buộc:**
+
+1. Giữ nguyên toàn bộ Web App hiện tại, bao gồm 6 khu vực chính của Trang chủ, 8 khu vực trò chơi, hình ảnh 3D Chibi, chữ hiển thị, bố cục và các chức năng.
+2. Giữ nguyên 10 trò chơi đã có. Không xóa, không sửa, không thay thế và không làm mất dữ liệu.
+3. Mỗi trò chơi mới có gameId duy nhất và được gắn đúng categoryId của khu vực tương ứng.
+4. Mỗi trò phải có cơ chế tương tác thật: kéo thả, điều khiển, ghép nối, xây dựng, thu hoạch, mở khóa, vận chuyển hoặc khám phá.
+5. Không biến trò chơi thành 5 câu hỏi trắc nghiệm thông thường.
+6. Mỗi trò có 5 nhiệm vụ, màn hình bắt đầu, hướng dẫn ngắn, thanh tiến trình, màn hình chiến thắng, nút CHƠI LẠI và QUAY LẠI.
+7. Có 3 mức độ: DỄ – VỪA – THỬ THÁCH. Không đưa nội dung vượt chương trình Toán lớp 1.
+8. Hình ảnh phong cách hoạt hình 3D Chibi, màu sắc tươi sáng, phù hợp học sinh 6–7 tuổi.
+9. Giao diện ngang 16:9, tối ưu tivi, máy tính, chuột và iPad; không cuộn trang khi chơi toàn màn hình.
+10. Câu hỏi và hướng dẫn chính bằng tiếng Việt. Tiếng Anh chỉ bổ trợ khi phù hợp, giọng tự nhiên, không dùng giọng tiếng Anh đọc tiếng Việt.
+11. Có âm thanh đúng/sai, ting ting, tiếng vỗ tay và hiệu ứng riêng của từng trò.
+12. Khi sai, học sinh được thử lại, có gợi ý trực quan, không mất tiến trình.
+13. Các phép tính, số lượng đồ vật, hình học, đồng hồ và thước đo phải chính xác.
+14. Nội dung nhiệm vụ có thể thay đổi khi chơi lại nhưng luôn có đáp án hợp lệ.
+15. Không tự ý thay đổi hệ thống ngôi sao, giấy chứng nhận, 41 bài học hoặc dữ liệu học sinh.
+16. Chỉ chỉnh sửa các thành phần liên quan trực tiếp đến trò chơi đang được tạo.
+17. Kiểm tra trò chơi mở được, hoàn thành đủ 5 nhiệm vụ, xử lý đúng/sai, chơi lại và quay về đúng khu vực.
+18. Không tự động tạo toàn bộ 32 trò trong một lần nếu có nguy cơ ảnh hưởng Web App. Ưu tiên triển khai lần lượt, kiểm tra xong trò trước mới tiếp tục trò sau.
+
+---
+
+# KHU VỰC 1. LÂU ĐÀI NHỮNG CON SỐ
+
+## PROMPT 01 – GIẢI CỨU NHỮNG CON SỐ BỊ MẤT TÍCH
+
+Tạo trò chơi GIẢI CỨU NHỮNG CON SỐ BỊ MẤT TÍCH trong khu vực LÂU ĐÀI NHỮNG CON SỐ.
+
+**Kiến thức:** Nhận biết, sắp xếp số, tìm số còn thiếu trong phạm vi 10 và 100.
+
+**Bối cảnh:** Lâu đài xanh vàng 3D Chibi có 5 căn phòng bị khóa. Một cơn gió phép thuật làm các con số bay khỏi vị trí.
+
+**Cách chơi:**
+- Mỗi phòng hiển thị một dãy số có 1–3 ô trống.
+- Các con số xuất hiện như những ngôi sao bay lơ lửng.
+- Học sinh kéo từng số vào ô trống phù hợp.
+- Khi đúng, số phát sáng, bay vào vị trí, cửa sổ lâu đài sáng lên.
+- Khi sai, số quay về vị trí cũ, xuất hiện gợi ý bằng dãy số hoặc trục số.
+- Hoàn thành 5 phòng, cổng lâu đài mở, pháo hoa và tiếng vỗ tay xuất hiện.
+
+**3 mức độ:**
+- Dễ: Dãy số 0–10 tăng dần, thiếu 1 số.
+- Vừa: Dãy tăng/giảm, số liền trước, liền sau trong phạm vi 20.
+- Thử thách: Dãy số trong phạm vi 100, thiếu 2–3 số, có thể đếm cách 10 đơn vị.
+
+**Yêu cầu:** Kéo thả thật, có hiệu ứng số bay, cửa mở, ánh sáng; 5 phòng tương ứng 5 nhiệm vụ; mỗi lần chơi lại có dãy số hợp lệ khác nhau.
+
+## PROMPT 02 – ĐOÀN TÀU SỐ HỌC XUYÊN VƯƠNG QUỐC
+
+Tạo trò chơi ĐOÀN TÀU SỐ HỌC XUYÊN VƯƠNG QUỐC trong khu vực LÂU ĐÀI NHỮNG CON SỐ.
+
+**Bối cảnh:** Đoàn tàu 3D Chibi nhiều màu đang đứng tại nhà ga cổ tích. Các toa tàu bị tách rời và xếp lộn xộn.
+
+**Cách chơi:**
+- Hiển thị đầu tàu và 4–6 toa mang số.
+- Học sinh kéo các toa vào đường ray theo đúng thứ tự.
+- Khi đúng, móc nối tự khóa, phát âm thanh cạch.
+- Khi sai, toa rung nhẹ rồi quay về kho.
+- Khi hoàn thành, đoàn tàu chạy qua cầu, đường hầm hoặc cánh đồng.
+- Sau mỗi nhiệm vụ, tàu đến một nhà ga mới.
+
+**5 nhiệm vụ:** Xếp tăng dần, xếp giảm dần, điền số còn thiếu, tìm số liền trước/liền sau, ghép đoàn tàu hoàn chỉnh.
+
+**3 mức độ:**
+- Dễ: Số 0–10.
+- Vừa: Số 0–20.
+- Thử thách: Số trong phạm vi 100.
+
+**Yêu cầu:** Toa tàu kéo thả và nối thật, tàu chạy bằng hoạt ảnh, có tiếng còi tàu, bánh xe và vỗ tay.
+
+## PROMPT 03 – NHÀ MÁY BÓ QUE TÍNH THẦN KỲ
+
+Tạo trò chơi NHÀ MÁY BÓ QUE TÍNH THẦN KỲ trong khu vực LÂU ĐÀI NHỮNG CON SỐ.
+
+**Kiến thức:** Chục, đơn vị và cấu tạo số có hai chữ số.
+
+**Bối cảnh:** Nhà máy 3D Chibi có robot, băng chuyền, máy bó que và các hộp hàng.
+
+**Cách chơi:**
+- Màn hình hiển thị số cần tạo, ví dụ 34.
+- Học sinh kéo 3 bó 10 que vào khay CHỤC và 4 que đơn vào khay ĐƠN VỊ.
+- Bấm ĐÓNG GÓI.
+- Khi đúng, máy hoạt động, que tính được đóng vào hộp mang số 34.
+- Khi sai, robot gợi ý số chục hoặc đơn vị cần bổ sung.
+
+**3 mức độ:**
+- Dễ: Số đến 30.
+- Vừa: Số đến 60.
+- Thử thách: Số đến 100, bao gồm số tròn chục và số 100.
+
+**Yêu cầu:** Mỗi bó có đúng 10 que; có thao tác kéo thả, máy đóng gói, robot nâng hàng và băng chuyền hoạt động. Gồm 5 đơn hàng.
+
+## PROMPT 04 – CÁNH CỔNG CÁ SẤU THAM ĂN
+
+Tạo trò chơi CÁNH CỔNG CÁ SẤU THAM ĂN trong khu vực LÂU ĐÀI NHỮNG CON SỐ.
+
+**Kiến thức:** So sánh số và sử dụng dấu >, <, =.
+
+**Bối cảnh:** Hai bờ sông cổ tích có 5 cánh cổng được canh giữ bởi cá sấu Chibi dễ thương.
+
+**Cách chơi:**
+- Hai nhóm đồ vật hoặc hai số xuất hiện ở hai bên.
+- Học sinh xoay miệng cá sấu hoặc kéo dấu so sánh vào giữa.
+- Khi đúng, cá sấu vui vẻ mở cổng, cầu nâng lên và nhân vật bước qua.
+- Khi sai, cá sấu lắc đầu, hai nhóm đồ vật được làm nổi bật để bé so sánh lại.
+
+**3 mức độ:**
+- Dễ: So sánh nhóm đồ vật đến 10.
+- Vừa: So sánh số đến 20.
+- Thử thách: So sánh số đến 100, bao gồm số bằng nhau.
+
+**Yêu cầu:** Có thao tác xoay/kéo thả dấu, hình miệng cá sấu đúng chiều, hoạt ảnh cầu nâng và nhân vật đi qua 5 cổng.
+
+---
+
+# KHU VỰC 2. KHU RỪNG PHÉP TÍNH
+
+## PROMPT 05 – NÔNG TRẠI NHỔ CỦ CẢI THẦN KỲ
+
+Tạo trò chơi NÔNG TRẠI NHỔ CỦ CẢI THẦN KỲ trong khu vực KHU RỪNG PHÉP TÍNH.
+
+**Kiến thức:** Cộng trừ trong phạm vi 10 và cộng trừ không nhớ trong phạm vi 100.
+
+**Bối cảnh:** Vườn 3D Chibi có 5 luống củ cải, thỏ trắng làm nông dân, giỏ thu hoạch, đất nâu, lá xanh và hàng rào gỗ.
+
+**Cách chơi:**
+- Mỗi củ cải mang một phép tính.
+- Bên cạnh luống có các giỏ mang kết quả.
+- Học sinh kéo củ cải về phía giỏ đúng, sau đó kéo lên để nhổ.
+- Khi đúng, củ cải rung lắc, đất nứt nhẹ, củ cải bật lên và bay vào giỏ.
+- Thỏ trắng chạy đến thu hoạch và nhảy vui.
+- Khi sai, củ cải chưa nhổ được, xuất hiện gợi ý bằng hình ảnh.
+
+**3 mức độ:**
+- Dễ: Cộng trừ đến 5.
+- Vừa: Cộng trừ đến 10.
+- Thử thách: Cộng trừ không nhớ đến 100.
+
+**Yêu cầu:** Củ cải phải được kéo nhổ thật sự, có hiệu ứng đất, lá cây, thỏ thu hoạch, giỏ đếm số củ và 5 thử thách từ củ nhỏ đến củ khổng lồ.
+
+## PROMPT 06 – XÂY CẦU CỨU CÁC BẠN THÚ
+
+Tạo trò chơi XÂY CẦU CỨU CÁC BẠN THÚ trong khu vực KHU RỪNG PHÉP TÍNH.
+
+**Bối cảnh:** Một dòng suối chia khu rừng thành hai bờ. Thỏ, Gấu, Sóc và Hươu đang chờ được qua cầu.
+
+**Cách chơi:**
+- Cây cầu có 5 khoảng trống.
+- Mỗi khoảng trống mang một kết quả.
+- Học sinh kéo tấm ván có phép tính tương ứng đến đúng vị trí.
+- Khi đúng, ván tự lắp, đinh gỗ đóng xuống, dây cầu căng lên.
+- Khi sai, ván quay về vị trí ban đầu.
+- Khi cầu hoàn chỉnh, các bạn thú lần lượt đi qua.
+
+**3 mức độ:**
+- Dễ: Cộng trừ đến 5.
+- Vừa: Cộng trừ đến 10.
+- Thử thách: Cộng trừ không nhớ đến 100.
+
+**Yêu cầu:** 5 nhịp cầu, kéo thả thật, cầu hình thành từng phần, các con vật chỉ đi qua khi cầu hoàn chỉnh; có tiếng đóng ván, nước chảy và vỗ tay.
+
+## PROMPT 07 – ONG VÀNG MANG MẬT VỀ TỔ
+
+Tạo trò chơi ONG VÀNG MANG MẬT VỀ TỔ trong khu vực KHU RỪNG PHÉP TÍNH.
+
+**Bối cảnh:** Vườn 3D Chibi có hoa lớn, ong vàng, tổ ong 5 ngăn và các giọt mật lấp lánh.
+
+**Cách chơi:**
+- Mỗi ngăn tổ có một số đích.
+- Các bông hoa mang phép tính.
+- Học sinh điều khiển ong bay đến hoa có kết quả phù hợp.
+- Ong hút mật và mang giọt mật về đúng ngăn tổ.
+- Khi sai, ong bay vòng nhẹ rồi quay lại.
+- Khi đủ 5 giọt mật, tổ ong đầy và ong chúa xuất hiện chúc mừng.
+
+**3 mức độ:**
+- Dễ: Phép tính đến 5.
+- Vừa: Phép tính đến 10.
+- Thử thách: Cộng trừ không nhớ đến 100.
+
+**Yêu cầu:** Ong bay theo thao tác điều khiển, có hoạt ảnh hút mật, mang mật, hoa nở và tổ đầy mật; 5 nhiệm vụ có đáp án chính xác.
+
+## PROMPT 08 – CỖ MÁY TRÁI CÂY PHÉP THUẬT
+
+Tạo trò chơi CỖ MÁY TRÁI CÂY PHÉP THUẬT trong khu vực KHU RỪNG PHÉP TÍNH.
+
+**Kiến thức:** Cộng, trừ, tìm số còn thiếu trong phép tính.
+
+**Bối cảnh:** Nhà máy nước ép 3D Chibi có bánh răng, băng chuyền trái cây, ống dẫn và máy ép.
+
+**Cách chơi:**
+- Máy hiển thị phép tính có ô trống, ví dụ 4 + ? = 7.
+- Học sinh kéo thẻ số vào bánh răng còn thiếu.
+- Kéo cần gạt KHỞI ĐỘNG.
+- Khi đúng, bánh răng quay, trái cây chạy vào máy, nước ép chảy vào ly.
+- Khi sai, máy dừng và hiển thị gợi ý bằng nhóm trái cây.
+- Hoàn thành 5 ly nước ép để mở quầy hàng.
+
+**3 mức độ:**
+- Dễ: Cộng đến 5.
+- Vừa: Cộng trừ đến 10.
+- Thử thách: Phép tính có ô trống trong phạm vi 100, không nhớ.
+
+**Yêu cầu:** Cần gạt hoạt động thật, có bánh răng, băng chuyền, nước ép chuyển động; 5 nhiệm vụ tương ứng 5 ly.
+
+---
+
+# KHU VỰC 3. XỨ SỞ HÌNH HỌC
+
+## PROMPT 09 – KIẾN TRÚC SƯ XÂY LÂU ĐÀI
+
+Tạo trò chơi KIẾN TRÚC SƯ XÂY LÂU ĐÀI trong khu vực XỨ SỞ HÌNH HỌC.
+
+**Kiến thức:** Hình tròn, vuông, tam giác, chữ nhật và ghép hình.
+
+**Bối cảnh:** Công trường cổ tích 3D Chibi có cần cẩu, robot thợ xây, gạch hình học và 5 công trình đang xây dở.
+
+**Cách chơi:**
+- Mỗi công trình có bản thiết kế.
+- Học sinh kéo hình vuông làm thân nhà, tam giác làm mái, chữ nhật làm cửa, hình tròn làm cửa sổ.
+- Khi đúng, hình tự khớp, cần cẩu nâng vật liệu và robot xây dựng.
+- Khi sai, hình quay về kho.
+- Hoàn thành công trình, cửa mở, đèn sáng, cờ tung bay.
+
+**3 mức độ:**
+- Dễ: Ghép 3–4 hình.
+- Vừa: Ghép 5–7 hình.
+- Thử thách: Ghép 8–10 hình, có xoay hình đơn giản.
+
+**Yêu cầu:** Có 5 công trình, hình học chuẩn, kéo thả và xoay thật, công trình hoàn thiện từng phần.
+
+## PROMPT 10 – ROBOT CHUYỂN HÀNG HÌNH KHỐI
+
+Tạo trò chơi ROBOT CHUYỂN HÀNG HÌNH KHỐI trong khu vực XỨ SỞ HÌNH HỌC.
+
+**Kiến thức:** Khối lập phương và khối hộp chữ nhật.
+
+**Bối cảnh:** Kho hàng 3D Chibi có băng chuyền, xe tải, robot gắp hàng và các kiện hàng nhiều màu.
+
+**Cách chơi:**
+- Robot nhận nhiệm vụ xếp hàng lên xe.
+- Học sinh kéo các khối hàng vào khoang mang biểu tượng tương ứng.
+- Có thể kéo cần điều khiển để robot gắp và đặt hàng.
+- Khi đúng, robot nâng kiện hàng và xếp lên xe.
+- Khi sai, robot trả kiện hàng về băng chuyền.
+- Đủ hàng, xe tải đóng cửa và chạy đi.
+
+**3 mức độ:**
+- Dễ: Phân biệt hai loại khối.
+- Vừa: Phân loại nhiều kiện hàng khác kích thước, màu sắc.
+- Thử thách: Xếp đúng loại khối và số lượng được yêu cầu.
+
+**Yêu cầu:** 5 chuyến xe, hình khối chuẩn, robot và băng chuyền có hoạt ảnh, hỗ trợ chuột và cảm ứng.
+
+## PROMPT 11 – MÊ CUNG ROBOT TÌM NHÀ
+
+Tạo trò chơi MÊ CUNG ROBOT TÌM NHÀ trong khu vực XỨ SỞ HÌNH HỌC.
+
+**Kiến thức:** Vị trí, định hướng không gian, lập kế hoạch đường đi.
+
+**Bối cảnh:** Robot Bim Bim bị lạc trong thành phố hình học có đường đi, nhà, cây và chướng ngại vật.
+
+**Cách chơi:**
+- Hiển thị mê cung dạng lưới.
+- Học sinh kéo các mũi tên lên, xuống, trái, phải vào hàng lệnh.
+- Bấm CHẠY để robot đi từng bước.
+- Nếu gặp vật cản, robot dừng và đánh dấu lệnh lỗi để bé sửa.
+- Khi về nhà, cửa mở và robot vẫy tay.
+
+**3 mức độ:**
+- Dễ: Đường 3–4 bước.
+- Vừa: 5–7 bước, có vật cản.
+- Thử thách: 8–10 bước, có ngã rẽ và đường cụt.
+
+**Yêu cầu:** 5 mê cung có đường đi hợp lệ, có nút CHẠY, XÓA LỆNH, THỬ LẠI; robot không đi xuyên vật cản.
+
+## PROMPT 12 – XƯỞNG GHÉP TRANH KỲ DIỆU
+
+Tạo trò chơi XƯỞNG GHÉP TRANH KỲ DIỆU trong khu vực XỨ SỞ HÌNH HỌC.
+
+**Kiến thức:** Nhận biết, xoay và ghép các hình phẳng.
+
+**Bối cảnh:** Xưởng tranh 3D Chibi có bàn ghép, các mảnh hình học và khung tranh.
+
+**Cách chơi:**
+- Một hình mẫu xuất hiện.
+- Học sinh kéo các mảnh hình học vào khung để tạo hình tương ứng.
+- Có nút XOAY mảnh.
+- Khi đúng, mảnh tự khớp vào vị trí.
+- Khi hoàn thành, bức tranh trở thành nhân vật hoạt hình chuyển động.
+
+**5 nhiệm vụ:** Ghép ngôi nhà, con cá, thuyền buồm, robot và lâu đài.
+
+**3 mức độ:**
+- Dễ: 3–4 mảnh, có đường viền gợi ý.
+- Vừa: 5–6 mảnh.
+- Thử thách: 7–9 mảnh, ít gợi ý.
+
+**Yêu cầu:** Hình mẫu có lời giải chính xác, không chồng mảnh sai, có hoạt ảnh bức tranh sống dậy.
+
+---
+
+# KHU VỰC 4. THÁP ĐỒNG HỒ KỲ DIỆU
+
+## PROMPT 13 – ĐÁNH THỨC THÁP ĐỒNG HỒ
+
+Tạo trò chơi ĐÁNH THỨC THÁP ĐỒNG HỒ trong khu vực THÁP ĐỒNG HỒ KỲ DIỆU.
+
+**Kiến thức:** Nhận biết giờ đúng trên đồng hồ kim.
+
+**Bối cảnh:** Tháp đồng hồ 3D Chibi cao 5 tầng. Các đồng hồ bị dừng, bánh răng và chuông không hoạt động.
+
+**Cách chơi:**
+- Mỗi tầng có đồng hồ lớn với đủ 12 số.
+- Hiển thị yêu cầu, ví dụ: Chỉnh đồng hồ thành 7 giờ.
+- Học sinh kéo hoặc xoay kim giờ và kim phút.
+- Kim phút chỉ số 12, kim giờ chỉ đúng số yêu cầu.
+- Khi đúng, bánh răng quay, chuông ngân và cửa tầng tiếp theo mở.
+- Khi sai, có gợi ý phân biệt kim dài, kim ngắn.
+
+**3 mức độ:**
+- Dễ: Các giờ quen thuộc.
+- Vừa: Giờ đúng từ 1 đến 12.
+- Thử thách: Ghép giờ đúng với hoạt động sinh hoạt.
+
+**Yêu cầu:** 5 tầng, đồng hồ chính xác, kim ngắn và dài rõ ràng, có hoạt ảnh xoay kim, bánh răng và chuông.
+
+## PROMPT 14 – CHUYẾN XE BUÝT ĐÚNG GIỜ
+
+Tạo trò chơi CHUYẾN XE BUÝT ĐÚNG GIỜ trong khu vực THÁP ĐỒNG HỒ KỲ DIỆU.
+
+**Kiến thức:** Xem giờ đúng và liên hệ với hoạt động hằng ngày.
+
+**Bối cảnh:** Xe buýt vàng chở các bạn thú qua 5 trạm: nhà, trường học, công viên, thư viện và bến cuối.
+
+**Cách chơi:**
+- Mỗi trạm có bảng lịch trình ghi giờ đúng.
+- Học sinh kéo đồng hồ phù hợp vào bảng trạm.
+- Khi đúng, tài xế mở cửa, thú lên xe và xe chạy tiếp.
+- Khi sai, xe chưa xuất phát, đồng hồ nhấp nháy gợi ý.
+
+**3 mức độ:**
+- Dễ: Ghép giờ đúng với đồng hồ kim.
+- Vừa: Phân biệt nhiều mặt đồng hồ.
+- Thử thách: Sắp xếp hoạt động theo trình tự thời gian có thông tin giờ rõ ràng.
+
+**Yêu cầu:** 5 trạm, xe di chuyển thật, đồng hồ kim chính xác, không yêu cầu phút lẻ hoặc giờ rưỡi.
+
+## PROMPT 15 – KỸ SƯ ĐO CẦU
+
+Tạo trò chơi KỸ SƯ ĐO CẦU trong khu vực THÁP ĐỒNG HỒ KỲ DIỆU.
+
+**Kiến thức:** Đo độ dài bằng cm và so sánh độ dài.
+
+**Bối cảnh:** Hải Ly kỹ sư xây cầu gỗ 3D Chibi qua dòng suối.
+
+**Cách chơi:**
+- Học sinh kéo thước đo đến thanh gỗ.
+- Căn vạch 0 đúng một đầu thanh.
+- Đọc chiều dài tại đầu còn lại.
+- Nhập độ dài hoặc kéo thẻ số cm.
+- Khi đúng, máy cưa cắt thanh gỗ và cần cẩu lắp vào cầu.
+- Khi sai, có gợi ý căn vạch 0.
+
+**3 mức độ:**
+- Dễ: Đo thanh gỗ dài 1–10 cm.
+- Vừa: Đo và so sánh các thanh.
+- Thử thách: Chọn thanh phù hợp với độ dài yêu cầu để hoàn thiện cầu.
+
+**Yêu cầu:** 5 thanh gỗ, vạch cm đều và chính xác, thao tác kéo thước thật, không làm sai kết quả do tỷ lệ hiển thị.
+
+## PROMPT 16 – LỊCH TUẦN LỄ HỘI
+
+Tạo trò chơi LỊCH TUẦN LỄ HỘI trong khu vực THÁP ĐỒNG HỒ KỲ DIỆU.
+
+**Kiến thức:** Các ngày trong tuần, thứ tự ngày, xem lịch đơn giản.
+
+**Bối cảnh:** Vương quốc tổ chức lễ hội 7 ngày, sân khấu có 7 chiếc đèn đang tắt.
+
+**Cách chơi:**
+- Học sinh kéo các thẻ thứ Hai đến Chủ nhật vào bảng lịch.
+- Sau đó tìm ngày trước, ngày sau hoặc đặt biểu tượng hoạt động vào ngày được yêu cầu.
+- Mỗi nhiệm vụ đúng, một đèn lễ hội sáng lên.
+- Hoàn thành 5 nhiệm vụ, sân khấu mở rèm và các nhân vật nhảy múa.
+
+**3 mức độ:**
+- Dễ: Xếp thứ trong tuần.
+- Vừa: Tìm hôm qua, hôm nay, ngày mai.
+- Thử thách: Đọc lịch tháng đơn giản.
+
+**Yêu cầu:** Có kéo thả thẻ ngày, hoạt ảnh đèn sáng, sân khấu mở màn; lịch phải có dữ liệu ngày tháng chính xác.
+
+---
+
+# KHU VỰC 5. SIÊU THỊ TOÁN HỌC
+
+## PROMPT 17 – BÉ LÀM NHÂN VIÊN SIÊU THỊ
+
+Tạo trò chơi BÉ LÀM NHÂN VIÊN SIÊU THỊ trong khu vực SIÊU THỊ TOÁN HỌC.
+
+**Kiến thức:** Đếm số lượng, cộng số lượng đơn giản và vận dụng thực tế.
+
+**Bối cảnh:** Siêu thị 3D Chibi màu hồng có kệ trái cây, sữa, bánh, đồ chơi và khách hàng là các bạn thú.
+
+**Cách chơi:**
+- Khách đưa danh sách bằng hình ảnh, ví dụ 3 táo và 2 hộp sữa.
+- Học sinh kéo đúng số lượng sản phẩm từ kệ vào xe đẩy.
+- Kéo xe đến quầy giao hàng.
+- Khi đúng, khách nhận hàng và vui vẻ rời đi.
+- Khi sai, sản phẩm thiếu hoặc thừa được làm nổi bật.
+
+**3 mức độ:**
+- Dễ: Một loại hàng, số lượng đến 5.
+- Vừa: Hai loại hàng, tổng đến 10.
+- Thử thách: Ba loại hàng, số lượng đến 20, có thể tính tổng.
+
+**Yêu cầu:** 5 khách hàng, sản phẩm kéo thả từng món, số lượng chính xác, có hoạt ảnh xe đẩy và khách nhận hàng.
+
+## PROMPT 18 – QUẦY THANH TOÁN THẦN KỲ
+
+Tạo trò chơi QUẦY THANH TOÁN THẦN KỲ trong khu vực SIÊU THỊ TOÁN HỌC.
+
+**Kiến thức:** Cộng trừ và giải quyết bài toán thực tế.
+
+**Bối cảnh:** Quầy thu ngân 3D Chibi có máy tính tiền, băng chuyền và khách hàng.
+
+**Cách chơi:**
+- Khách đưa 2–3 món hàng có giá bằng số đơn giản.
+- Học sinh kéo hàng lên băng chuyền.
+- Tính tổng giá và nhập bằng bàn phím số.
+- Khi đúng, máy in hóa đơn, ngăn kéo mở, hàng được đóng túi.
+- Khi sai, xuất hiện gợi ý bằng sơ đồ cộng hoặc nhóm đồ vật.
+
+**3 mức độ:**
+- Dễ: Tổng đến 5.
+- Vừa: Tổng đến 10.
+- Thử thách: Cộng không nhớ đến 100.
+
+**Yêu cầu:** 5 giỏ hàng, kéo hàng và nhập số thật, máy tính tiền có hoạt ảnh; có thể sử dụng điểm mua hàng giả định.
+
+## PROMPT 19 – XE GIAO HÀNG VƯỢT THỬ THÁCH
+
+Tạo trò chơi XE GIAO HÀNG VƯỢT THỬ THÁCH trong khu vực SIÊU THỊ TOÁN HỌC.
+
+**Kiến thức:** Ghép hai số thành tổng cho trước.
+
+**Bối cảnh:** Xe tải Chibi chạy trong thị trấn có 5 ngôi nhà nhiều màu.
+
+**Cách chơi:**
+- Mỗi nhà có số đích, ví dụ 8.
+- Học sinh kéo hai thùng hàng có tổng bằng 8 lên xe.
+- Điều khiển xe đến đúng ngôi nhà.
+- Khi đúng, cửa xe mở, hàng được giao và chủ nhà vẫy tay.
+- Khi sai, xe chưa khởi hành, có gợi ý về tổng.
+
+**3 mức độ:**
+- Dễ: Tổng đến 5.
+- Vừa: Tổng đến 10.
+- Thử thách: Tổng đến 100, không nhớ.
+
+**Yêu cầu:** 5 đơn hàng, kéo thùng và điều khiển xe thật; chấp nhận mọi cặp số hợp lệ.
+
+## PROMPT 20 – MÁY BÁN ĐỒ CHƠI TỰ ĐỘNG
+
+Tạo trò chơi MÁY BÁN ĐỒ CHƠI TỰ ĐỘNG trong khu vực SIÊU THỊ TOÁN HỌC.
+
+**Kiến thức:** Cấu tạo số, cộng số và vận dụng mua sắm.
+
+**Bối cảnh:** Máy bán đồ chơi 3D Chibi có 5 ngăn chứa gấu bông, ô tô, bóng, búp bê và robot.
+
+**Cách chơi:**
+- Mỗi món đồ chơi có giá bằng điểm mua hàng.
+- Học sinh kéo thẻ điểm vào khe máy để tạo đúng tổng.
+- Kéo cần gạt MỞ NGĂN.
+- Khi đúng, bánh răng quay, cửa mở và đồ chơi trượt xuống khay.
+- Khi sai, máy gợi ý số điểm còn thiếu.
+
+**3 mức độ:**
+- Dễ: Tổng đến 5.
+- Vừa: Tổng đến 10 bằng 2–3 thẻ.
+- Thử thách: Tổng đến 100 bằng chục và đơn vị.
+
+**Yêu cầu:** 5 món đồ chơi, thẻ điểm kéo thả, cần gạt hoạt động, hiệu ứng bánh răng và đồ chơi rơi xuống khay.
+
+---
+
+# KHU VỰC 6. VƯỜN QUY LUẬT BÍ ẨN
+
+## PROMPT 21 – NGƯỜI LÀM VƯỜN TRỒNG HOA PHÉP THUẬT
+
+Tạo trò chơi NGƯỜI LÀM VƯỜN TRỒNG HOA PHÉP THUẬT trong khu vực VƯỜN QUY LUẬT BÍ ẨN.
+
+**Kiến thức:** Quy luật lặp lại bằng màu sắc và hình dạng.
+
+**Bối cảnh:** Khu vườn 3D Chibi có 5 luống hoa, bướm, ong và đài phun nước.
+
+**Cách chơi:**
+- Mỗi luống hoa có một dãy theo quy luật nhưng thiếu vài bông.
+- Học sinh kéo hoa vào chỗ trống.
+- Khi đúng, hoa nở, bướm bay đến.
+- Khi sai, hoa quay về khay và quy luật được làm nổi bật.
+- Hoàn thành 5 luống, đài phun nước hoạt động.
+
+**3 mức độ:**
+- Dễ: AB.
+- Vừa: AAB, ABB.
+- Thử thách: ABC và dãy nhiều ô trống.
+
+**Yêu cầu:** 5 luống, kéo thả và hoa nở thật, quy luật chính xác, mỗi lượt chơi có thể thay đổi màu hoa.
+
+## PROMPT 22 – MẬT MÃ MỞ CỔNG HOA
+
+Tạo trò chơi MẬT MÃ MỞ CỔNG HOA trong khu vực VƯỜN QUY LUẬT BÍ ẨN.
+
+**Kiến thức:** Dãy số, quy luật hình và suy luận logic.
+
+**Bối cảnh:** Khu vườn có 5 cánh cổng đá, ổ khóa hình hoa và các viên đá phát sáng.
+
+**Cách chơi:**
+- Trên cổng có chuỗi hình hoặc số bị thiếu.
+- Học sinh kéo viên đá phù hợp vào ổ khóa.
+- Khi đúng, đá sáng lên, bánh răng quay và cổng mở.
+- Khi sai, ổ khóa rung nhẹ và xuất hiện gợi ý.
+- Bé đi qua từng cổng để đến khu vườn bí mật.
+
+**3 mức độ:**
+- Dễ: Quy luật lặp 2 hình.
+- Vừa: Quy luật 3 hình hoặc dãy số liên tiếp.
+- Thử thách: Dãy tăng/giảm theo bước đơn giản trong phạm vi 100 hoặc quy luật có hai ô trống.
+
+**Yêu cầu:** 5 cổng, kéo thả viên đá, mở khóa và chuyển cảnh thật; quy luật phải rõ ràng.
+
+## PROMPT 23 – THÁM TỬ TÌM ĐỒ VẬT BIẾN MẤT
+
+Tạo trò chơi THÁM TỬ TÌM ĐỒ VẬT BIẾN MẤT trong khu vực VƯỜN QUY LUẬT BÍ ẨN.
+
+**Kiến thức:** Quan sát, ghi nhớ vị trí, số lượng và đặc điểm đồ vật.
+
+**Bối cảnh:** Sóc Tinh Nghịch sống trong khu vườn 3D Chibi và thường giấu đồ vật.
+
+**Cách chơi:**
+- Hiển thị 4–6 đồ vật.
+- Học sinh quan sát và bấm ĐÃ SẴN SÀNG.
+- Sóc xuất hiện, lá bay và một đồ vật biến mất.
+- Học sinh kéo đúng đồ vật từ khay về vị trí cũ.
+- Khi đúng, đồ vật hiện lại, Sóc nhảy vui.
+- Khi sai, cho phép xem lại cảnh ban đầu.
+
+**3 mức độ:**
+- Dễ: 3–4 đồ vật.
+- Vừa: 5 đồ vật khác màu và hình dạng.
+- Thử thách: 6 đồ vật, có đồ vật giống loại nhưng khác màu hoặc vị trí.
+
+**Yêu cầu:** 5 vụ mất tích, không ép thời gian quá ngắn, đồ vật biến mất có vị trí chính xác, hoạt ảnh Sóc giấu đồ.
+
+## PROMPT 24 – KHU VƯỜN GƯƠNG SOI KỲ DIỆU
+
+Tạo trò chơi KHU VƯỜN GƯƠNG SOI KỲ DIỆU trong khu vực VƯỜN QUY LUẬT BÍ ẨN.
+
+**Kiến thức:** Quan sát vị trí, tái tạo mẫu, trái – phải và hình dạng.
+
+**Bối cảnh:** Khu vườn 3D Chibi có hai luống hoa đối diện nhau qua đường lát đá.
+
+**Cách chơi:**
+- Bên trái hiển thị mẫu sắp xếp.
+- Bên phải là khu vườn còn trống.
+- Học sinh kéo hoa, cây vào vị trí theo yêu cầu.
+- Có hai chế độ: SAO CHÉP MẪU hoặc SOI GƯƠNG.
+- Khi đúng, hoa nở, chim bay và cầu hoa xuất hiện.
+- Khi sai, ô sai sáng lên để bé sửa.
+
+**3 mức độ:**
+- Dễ: Sao chép mẫu 2×2.
+- Vừa: Sao chép mẫu 2×3.
+- Thử thách: Soi gương mẫu 3×3 qua trục dọc.
+
+**Yêu cầu:** 5 khu vườn, thao tác kéo thả thật, xử lý đúng chế độ sao chép và soi gương, có hoạt ảnh hoa nở.
+
+---
+
+# KHU VỰC 7. ĐƯỜNG ĐUA TOÁN HỌC
+
+## PROMPT 25 – ĐUA XE VƯỢT CHƯỚNG NGẠI VẬT
+
+Tạo trò chơi ĐUA XE VƯỢT CHƯỚNG NGẠI VẬT trong khu vực ĐƯỜNG ĐUA TOÁN HỌC.
+
+**Kiến thức:** Tính nhẩm cộng trừ, nhận biết số.
+
+**Bối cảnh:** Đường đua 3D Chibi có xe đỏ, xanh, vàng, cờ đích, cầu vượt và 5 cổng.
+
+**Cách chơi:**
+- Học sinh chọn xe.
+- Xe chạy đến cổng rồi dừng.
+- Phép tính xuất hiện, các làn đường mang kết quả.
+- Học sinh điều khiển xe sang làn đúng.
+- Khi đúng, cổng mở, xe tăng tốc.
+- Khi sai, xe dừng an toàn để đổi làn.
+- Vượt 5 cổng, xe cán đích và nhận cúp.
+
+**3 mức độ:**
+- Dễ: Cộng trừ đến 5.
+- Vừa: Cộng trừ đến 10.
+- Thử thách: Cộng trừ không nhớ đến 100.
+
+**Yêu cầu:** Xe chuyển làn thật, có hoạt ảnh bánh xe, tăng tốc, cờ đua, cúp; không giới hạn thời gian gây áp lực.
+
+## PROMPT 26 – TÊN LỬA CHINH PHỤC CÁC HÀNH TINH
+
+Tạo trò chơi TÊN LỬA CHINH PHỤC CÁC HÀNH TINH trong khu vực ĐƯỜNG ĐUA TOÁN HỌC.
+
+**Kiến thức:** Cấu tạo số và phép cộng.
+
+**Bối cảnh:** Trạm vũ trụ 3D Chibi có tên lửa, bình nhiên liệu, bệ phóng và 5 hành tinh tưởng tượng.
+
+**Cách chơi:**
+- Mỗi hành tinh yêu cầu một lượng nhiên liệu.
+- Học sinh kéo các bình nhiên liệu mang số vào khoang chứa để tạo đúng tổng.
+- Bấm PHÓNG TÊN LỬA.
+- Khi đúng, tên lửa đếm ngược 3–2–1 rồi bay lên.
+- Khi sai, đồng hồ nhiên liệu gợi ý thiếu hoặc thừa.
+- Đến mỗi hành tinh, nhận một ngôi sao hành trình.
+
+**3 mức độ:**
+- Dễ: Tổng đến 5.
+- Vừa: Tổng đến 10.
+- Thử thách: Tổng đến 100, cộng không nhớ.
+
+**Yêu cầu:** 5 hành tinh, kéo nhiên liệu thật, đồng hồ nhiên liệu chính xác, tên lửa có hoạt ảnh phóng và hạ cánh.
+
+## PROMPT 27 – ĐUA THUYỀN VƯỢT THÁC TOÁN HỌC
+
+Tạo trò chơi ĐUA THUYỀN VƯỢT THÁC TOÁN HỌC trong khu vực ĐƯỜNG ĐUA TOÁN HỌC.
+
+**Kiến thức:** Cộng trừ, so sánh số và tính nhẩm.
+
+**Bối cảnh:** Dòng sông 3D Chibi có thuyền nhỏ, thác nước, đá, cá nhảy và 5 ngã rẽ.
+
+**Cách chơi:**
+- Cáo Con chèo thuyền theo dòng sông.
+- Tại mỗi ngã rẽ xuất hiện phép tính hoặc yêu cầu so sánh.
+- Các nhánh sông mang số khác nhau.
+- Học sinh kéo bánh lái sang nhánh đúng.
+- Khi đúng, thuyền rẽ, nước bắn nhẹ.
+- Khi sai, thuyền dừng để bé sửa.
+- Vượt 5 ngã rẽ để đến bến.
+
+**3 mức độ:**
+- Dễ: Tính đến 5.
+- Vừa: Tính đến 10.
+- Thử thách: Cộng trừ không nhớ đến 100.
+
+**Yêu cầu:** Bánh lái điều khiển thật, thuyền không đi xuyên đá, có hoạt ảnh nước, cá và mái chèo.
+
+## PROMPT 28 – ĐƯỜNG ĐUA LẮP BÁNH XE THẦN TỐC
+
+Tạo trò chơi ĐƯỜNG ĐUA LẮP BÁNH XE THẦN TỐC trong khu vực ĐƯỜNG ĐUA TOÁN HỌC.
+
+**Kiến thức:** Cấu tạo số, tìm hai số có tổng cho trước.
+
+**Bối cảnh:** Xưởng sửa xe 3D Chibi có 5 xe mất bánh, robot sửa xe và đường đua.
+
+**Cách chơi:**
+- Mỗi thân xe mang số đích, ví dụ 9.
+- Các bánh xe mang số.
+- Học sinh kéo hai bánh có tổng bằng 9 vào hai trục.
+- Khi đúng, robot siết ốc, bánh quay và xe chạy.
+- Khi sai, bánh chưa được gắn cố định.
+- Hoàn thành 5 xe, tất cả tham gia cuộc đua.
+
+**3 mức độ:**
+- Dễ: Tổng đến 5.
+- Vừa: Tổng đến 10.
+- Thử thách: Tổng đến 100, không nhớ.
+
+**Yêu cầu:** 5 xe, mỗi xe hai bánh, chấp nhận mọi cặp số hợp lệ, hoạt ảnh lắp bánh, quay bánh và xe chạy.
+
+---
+
+# KHU VỰC 8. ĐẢO KHO BÁU TOÁN HỌC
+
+## PROMPT 29 – TRUY TÌM KHO BÁU 5 CHÌA KHÓA
+
+Tạo trò chơi TRUY TÌM KHO BÁU 5 CHÌA KHÓA trong khu vực ĐẢO KHO BÁU TOÁN HỌC.
+
+**Kiến thức:** Ôn tập tổng hợp Toán lớp 1.
+
+**Bối cảnh:** Đảo 3D Chibi có bãi biển, rừng dừa, cầu gỗ, hang động và rương kho báu tím viền vàng với 5 ổ khóa.
+
+**Cách chơi:** Học sinh khám phá 5 địa điểm:
+
+1. Bãi biển Con số: Kéo vỏ sò mang số vào đúng thứ tự.
+2. Cây cầu Phép tính: Ghép tấm ván có phép tính đúng.
+3. Hang động Hình học: Ghép các mảnh hình để mở cửa.
+4. Trạm Đo độ dài: Dùng thước đo vật và chọn thanh gỗ phù hợp.
+5. Tháp Đồng hồ: Xoay kim đến giờ đúng.
+
+Mỗi nhiệm vụ hoàn thành nhận một chìa khóa vàng. Chìa khóa bay vào ổ khóa. Đủ 5 chìa, rương mở, sao vàng bay lên.
+
+**3 mức độ:**
+- Dễ: Nội dung cơ bản tập 1; nhiệm vụ tập 2 chỉ xuất hiện nếu đã học.
+- Vừa: Kết hợp nội dung tập 1 và tập 2 đã học.
+- Thử thách: Số đến 100, cộng trừ không nhớ và nhiệm vụ nhiều bước.
+
+**Yêu cầu:** Có bản đồ đảo và 5 địa điểm, tương tác thật, chìa khóa lưu trong tiến trình, rương chỉ mở khi đủ 5 chìa.
+
+## PROMPT 30 – MÊ CUNG KIM TỰ THÁP BÍ ẨN
+
+Tạo trò chơi MÊ CUNG KIM TỰ THÁP BÍ ẨN trong khu vực ĐẢO KHO BÁU TOÁN HỌC.
+
+**Kiến thức:** Định hướng không gian, dãy số, phép tính và hình học.
+
+**Bối cảnh:** Kim tự tháp cổ tích 3D Chibi có hành lang, cửa đá, đuốc sáng, mê cung và viên ngọc ánh sáng.
+
+**Cách chơi:**
+- Học sinh điều khiển nhân vật bằng mũi tên.
+- Có 5 căn phòng.
+- Mỗi phòng có một cửa khóa bằng nhiệm vụ Toán học.
+- Hoàn thành nhiệm vụ, cửa đá mở và nhân vật đi tiếp.
+
+**5 nhiệm vụ:**
+1. Đi qua mê cung ngắn.
+2. Khôi phục dãy số.
+3. Lắp ghép hình mở cửa.
+4. Hoàn thiện phép cộng hoặc trừ.
+5. Tìm viên ngọc và mang về cửa ra.
+
+**3 mức độ:**
+- Dễ: Đường ngắn, phép tính đến 5.
+- Vừa: Nhiều ngã rẽ, phép tính đến 10.
+- Thử thách: Mê cung phức tạp hơn, số đến 100 và phép tính không nhớ.
+
+**Yêu cầu:** Mê cung có đường đi hợp lệ, nhân vật không đi xuyên tường, có nút di chuyển, thử lại và quay lại; cửa chỉ mở khi hoàn thành nhiệm vụ.
+
+## PROMPT 31 – BỨC TRANH KHO BÁU BỊ THẤT LẠC
+
+Tạo trò chơi BỨC TRANH KHO BÁU BỊ THẤT LẠC trong khu vực ĐẢO KHO BÁU TOÁN HỌC.
+
+**Kiến thức:** Ôn tập số, phép tính, so sánh và hình học.
+
+**Bối cảnh:** Bản đồ kho báu cổ tích bị chia thành 5 mảnh, nằm rải rác trên đảo.
+
+**Cách chơi:**
+- Học sinh hoàn thành 5 nhiệm vụ để tìm 5 mảnh bản đồ.
+- Mỗi nhiệm vụ đúng, một mảnh xuất hiện.
+- Học sinh kéo mảnh vào đúng vị trí trên khung.
+- Khi ghép đủ, bản đồ phát sáng và hiện đường đến kho báu.
+
+**5 nhiệm vụ:**
+1. Đếm và ghép nhóm vỏ sò.
+2. So sánh hai số.
+3. Sửa phép cộng.
+4. Sửa phép trừ.
+5. Ghép hình học thành biểu tượng kho báu.
+
+**3 mức độ:**
+- Dễ: Số và phép tính đến 5.
+- Vừa: Số và phép tính đến 10.
+- Thử thách: Số đến 100, cộng trừ không nhớ.
+
+**Yêu cầu:** 5 mảnh bản đồ khớp đúng vị trí, tạo thành bản đồ hoàn chỉnh, có hoạt ảnh đường đi phát sáng và tìm thấy kho báu.
+
+## PROMPT 32 – GIẢI CỨU VƯƠNG QUỐC TOÁN HỌC
+
+Tạo trò chơi đặc biệt GIẢI CỨU VƯƠNG QUỐC TOÁN HỌC trong khu vực ĐẢO KHO BÁU TOÁN HỌC.
+
+**Kiến thức:** Ôn tập tổng hợp Toán 1 – Kết nối tri thức với cuộc sống, tập 1 và tập 2.
+
+**Cốt truyện:** Một cơn bão phép thuật làm 5 viên pha lê của Vương quốc bị thất lạc. Lâu đài mất ánh sáng, cầu vồng biến mất và các bạn thú cần được giúp đỡ.
+
+Học sinh đóng vai nhà thám hiểm nhí, đi qua 5 chặng để tìm lại pha lê.
+
+**5 chặng:**
+
+**Chặng 1 – Cánh cổng Những con số**
+- Kéo các số vào đúng vị trí.
+- Hoàn thành dãy số để mở cổng.
+- Nhận pha lê xanh.
+
+**Chặng 2 – Cây cầu Phép tính**
+- Kéo các tấm ván mang phép tính vào đúng nhịp cầu.
+- Hoàn thành cầu để nhân vật đi qua.
+- Nhận pha lê đỏ.
+
+**Chặng 3 – Lâu đài Hình học**
+- Ghép các hình phẳng thành ngôi nhà.
+- Công trình hoàn thiện mở lối đi.
+- Nhận pha lê vàng.
+
+**Chặng 4 – Mê cung Thử thách**
+- Điều khiển nhân vật bằng mũi tên.
+- Tránh vật cản, tìm đường đến cổng.
+- Nhận pha lê tím.
+
+**Chặng 5 – Đài Phép thuật**
+- Giải nhiệm vụ tổng hợp phù hợp mức độ.
+- Kéo đủ 5 viên pha lê vào đài.
+- Kích hoạt sức mạnh giải cứu Vương quốc.
+
+**3 mức độ:**
+- Dễ: Số và phép tính đến 10, hình học cơ bản, đường đi ngắn.
+- Vừa: Nội dung tập 1 kết hợp kiến thức tập 2 đã học.
+- Thử thách: Số đến 100, cộng trừ không nhớ, ghép hình và suy luận nhiều bước.
+
+**Hiệu ứng:**
+- Mỗi chặng hoàn thành, một phần bản đồ sáng lên.
+- Pha lê bay về túi nhân vật.
+- Chặng cuối, 5 viên pha lê bay vào đài phép thuật.
+- Lâu đài sáng rực, cầu vồng xuất hiện, hoa nở, pháo hoa và tiếng vỗ tay.
+- Hiển thị: CHÚC MỪNG! CON ĐÃ GIẢI CỨU VƯƠNG QUỐC TOÁN HỌC!
+
+**Yêu cầu:** Có bản đồ 5 chặng, chuyển cảnh và tương tác thật, không dùng 5 câu hỏi trắc nghiệm đơn thuần; có nút CHƠI LẠI và QUAY LẠI KHO TRÒ CHƠI.
+
+---
+
+# PHẦN B. YÊU CẦU KIỂM TRA VÀ BẢO TOÀN WEB APP
+
+Sau khi phát triển từng trò chơi, hãy kiểm tra:
+
+1. Trò chơi được gắn đúng khu vực.
+2. Trò chơi có gameId duy nhất.
+3. Không trùng hoặc ghi đè 10 trò chơi cũ.
+4. Có đầy đủ 3 mức độ.
+5. Có 5 nhiệm vụ hoạt động.
+6. Kéo thả, điều khiển hoặc thao tác chính hoạt động thật.
+7. Có hiệu ứng đúng, sai và hoàn thành.
+8. Các phép tính, số lượng, hình học, đồng hồ, thước đo chính xác.
+9. Không có đáp án sai hoặc nhiệm vụ không thể hoàn thành.
+10. Chơi lại sinh nhiệm vụ hợp lệ.
+11. Nút quay lại mở đúng khu vực.
+12. Hoạt động tốt trên tivi, máy tính, chuột và iPad.
+13. Không ảnh hưởng đến 41 bài học, ôn tập, thử thách mỗi ngày và thành tích.
+14. Không làm thay đổi dữ liệu học sinh.
+15. Giữ nguyên 8 ảnh đại diện khu vực, phần chữ HTML và lớp nền chuyển sắc hiện có.
+
+**KẾT QUẢ MONG MUỐN:**
+
+- 8 khu vực, mỗi khu vực có 4 trò chơi mới.
+- Tổng cộng 32 trò chơi mới.
+- 10 trò chơi cũ vẫn được giữ nguyên.
+- Nếu không có trò nào trùng lặp hoặc bị thay thế, Kho trò chơi có tổng cộng 42 trò.
+- Mỗi trò chơi là một trải nghiệm phiêu lưu có hành động, nhiệm vụ và thành quả trực quan.
+- Web App hiện tại được bảo toàn hoàn toàn ngoài các phần bổ sung cần thiết.
+
+**LƯU Ý CUỐI CÙNG: KHÔNG THIẾT KẾ LẠI WEB APP. KHÔNG XÓA 10 TRÒ CHƠI CŨ. CHỈ BỔ SUNG CÁC TRÒ CHƠI MỚI VÀO ĐÚNG 8 KHU VỰC, TRIỂN KHAI LẦN LƯỢT ĐỂ BẢO ĐẢM CHẤT LƯỢNG.**

@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "Student": {
+      "title": "Student",
+      "description": "Grade 1 student profile registered with full name and class",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "fullName": { "type": "string", "maxLength": 100 },
+        "className": { "type": "string", "maxLength": 20 },
+        "avatar": { "type": "string", "maxLength": 50 },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "lastLoginAt": { "type": "string", "maxLength": 50 },
+        "totalStars": { "type": "number" },
+        "badges": { "type": "array" },
+        "collectedCarrots": { "type": "number" },
+        "collectedCups": { "type": "number" },
+        "collectedFish": { "type": "number" },
+        "collectedChests": { "type": "number" }
+      },
+      "required": ["id", "fullName", "className", "lastLoginAt"]
+    },
+    "ActivityRecord": {
+      "title": "ActivityRecord",
+      "description": "Learning and exam completion record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "studentId": { "type": "string", "maxLength": 128 },
+        "fullName": { "type": "string", "maxLength": 100 },
+        "className": { "type": "string", "maxLength": 20 },
+        "type": { "type": "string", "maxLength": 50 },
+        "targetId": { "type": "string", "maxLength": 100 },
+        "targetName": { "type": "string", "maxLength": 200 },
+        "score": { "type": "number" },
+        "totalQuestions": { "type": "number" },
+        "starsEarned": { "type": "number" },
+        "timeSpentSeconds": { "type": "number" },
+        "completedAt": { "type": "string", "maxLength": 50 },
+        "status": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "studentId", "fullName", "className", "type", "targetId", "completedAt"]
+    }
+  },
+  "firestore": {
+    "/students/{studentId}": {
+      "schema": "Student",
+      "description": "Collection of student profiles across Grade 1 classes"
+    },
+    "/activities/{activityId}": {
+      "schema": "ActivityRecord",
+      "description": "Collection of learning activities and exam records"
+    }
+  }
+}

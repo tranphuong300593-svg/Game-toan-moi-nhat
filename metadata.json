@@ -1,0 +1,8 @@
+{
+  "name": "Vương Quốc Toán Học Song Ngữ – Math Adventure Grade 1",
+  "description": "Ứng dụng học Toán lớp 1 song ngữ Việt – Anh chuẩn SGK Kết nối tri thức với cuộc sống với 41 bài học và kho trò chơi tương tác phong phú.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
